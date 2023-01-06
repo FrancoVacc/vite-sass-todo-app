@@ -1,0 +1,7 @@
+.responsive-container{
+    @media(min-width: 427px){
+        width: 400px;
+        margin: 0 auto;
+        padding: 5% 0;
+    }
+}

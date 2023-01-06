@@ -1,0 +1,70 @@
+//Clases extendidas
+
+.article-ext{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    color: $grey-600;
+}
+
+
+main{
+    margin: 0 auto;
+    padding: 0 40px;
+    margin-bottom: 10px;
+
+    form{
+        display: flex ;
+        // background-color: $bg-light;
+        border-radius: 3px;
+        margin-bottom:10px;
+
+        span{
+            height: 15px;
+            width: 15px;
+            border: 1px solid $grey-600;
+            border-radius: 50%;
+            margin: 10px;
+        }
+
+        input{
+            outline: transparent;
+            border: none;
+            background-color: transparent;
+            color: $grey-600;
+            width: 90%;
+        }
+
+    }
+    div{
+        // background-color: $bg-light;
+        border-radius: 3px 3px 0 0 ;
+        overflow:hidden;
+        margin-top: 10px;
+
+        article{
+            @extend .article-ext;
+            border-bottom: 1px solid $grey-600;
+            p{
+                flex-grow: 3;
+                font-size: .9rem;
+            }
+
+            .todo-completed{
+                text-decoration: line-through;
+            }
+        }
+        
+    } 
+
+    section{
+        @extend .article-ext;
+        // background-color: $bg-light;
+        border-radius: 0 0 3px 3px ;
+        font-size: .7rem;
+        button{
+            color: $grey-600;
+        }
+    }
+}

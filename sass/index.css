@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+button {
+  background: none;
+  border: none;
+  display: inline;
+}
+
+.general {
+  background-image: url("./assets/ligth.jpg");
+  background-size: auto;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  background-color: #f5f3f3;
+}
+
+header {
+  margin: 0 auto;
+  padding: 0 40px;
+}
+header div {
+  display: flex;
+  gap: 60%;
+  margin-bottom: 10px;
+  padding-top: 10px;
+  align-items: center;
+}
+header div h2 {
+  color: #fff;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+}
+
+.article-ext, main section, main div article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  color: #8b8a8a;
+}
+
+main {
+  margin: 0 auto;
+  padding: 0 40px;
+  margin-bottom: 10px;
+}
+main form {
+  display: flex;
+  background-color: #fff;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+main form span {
+  height: 15px;
+  width: 15px;
+  border: 1px solid #8b8a8a;
+  border-radius: 50%;
+  margin: 10px;
+}
+main form input {
+  outline: transparent;
+  border: none;
+  background-color: transparent;
+  color: #8b8a8a;
+  width: 90%;
+}
+main div {
+  background-color: #fff;
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+  margin-top: 10px;
+}
+main div article {
+  border-bottom: 1px solid #8b8a8a;
+}
+main div article p {
+  flex-grow: 2;
+  font-size: 0.9rem;
+}
+main div article .todo-completed {
+  text-decoration: line-through;
+}
+main div article .cross {
+  flex-grow: 1;
+}
+main section {
+  background-color: #fff;
+  border-radius: 0 0 3px 3px;
+  font-size: 0.7rem;
+}
+main section button {
+  color: #8b8a8a;
+}
+
+.botonera {
+  margin: 10px auto;
+  padding: 0 40px;
+}
+.botonera div {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  padding: 10px 0;
+  border-radius: 3px;
+}
+.botonera div button {
+  margin-left: 20px;
+}
+.botonera div button:hover {
+  color: #7f9ff9;
+}
+
+.filter-active {
+  color: #5f88f9;
+}
+
+.circulo {
+  border: 1px solid #8b8a8a;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+
+.cheked {
+  background-image: linear-gradient(to bottom right, aqua, purple);
+  border: none;
+}
+
+footer {
+  text-align: center;
+  color: #8a8b8b;
+  font-size: 0.7rem;
+}
+
+/*# sourceMappingURL=index.css.map */

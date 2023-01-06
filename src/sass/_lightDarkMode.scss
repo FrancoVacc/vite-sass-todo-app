@@ -1,0 +1,29 @@
+.light{
+    background-color: $bg-light;
+}
+
+.dark{
+    background-color: $bg-dark;
+}
+
+.general-light{
+    background-color: $bg-general-light;
+}
+.general-dark{
+    background-color: $bg-general-dark;
+}
+
+.image-light{
+    background-image: url('./assets/ligth.jpg');
+    @media (min-width: 425px) {
+        background-image: url('./assets/bg-desktop-light.jpg');
+        background-size:initial;
+    }
+}
+.image-dark{
+    background-image: url('./assets/dark.jpg');
+    @media (min-width: 425px) {
+        background-image: url('./assets/bg-desktop-dark.jpg');
+        background-size:initial;
+    }
+}

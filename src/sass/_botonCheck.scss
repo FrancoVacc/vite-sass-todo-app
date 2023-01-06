@@ -1,0 +1,14 @@
+.circulo{
+    border: 1px solid $grey-600;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px ;
+
+}
+
+.cheked{
+    background-image: $cheked-gradiant  ;
+    border: none;
+}
+
