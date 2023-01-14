@@ -1,3 +1,4 @@
+import { DragDropContext, Droppable, Draggable } from "@hello-pangea/dnd";
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import TodoFilter from "./components/TodoFilter";
@@ -8,6 +9,14 @@ import TodoList from "./components/TodoList";
 const initialStateTodo = localStorage.getItem("todos") ? JSON.parse(localStorage.getItem("todos")) : [];
 const initialStateTheme = localStorage.getItem("theme") || "light";
 
+const reorder = (list, startIndex, endIndex) => {
+  const result = [...list];
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+
+  return result;
+};
+
 function App() {
   const [todos, setTodos] = useState(initialStateTodo);
   const [filter, setFilter] = useState("all");
@@ -15,7 +24,6 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem("todos",JSON.stringify(todos));
-    console.log("todos")
   }, [todos])
   
 
@@ -72,6 +80,20 @@ function App() {
 
   const changeFilter = (filter) => setFilter(filter);
 
+  const handleDragEnd = result =>{
+    const { destination, source } = result;
+        if (!destination) return;
+        if (
+            source.index === destination.index &&
+            source.droppableId === destination.droppableId
+        )
+            return;
+
+        setTodos((prevTasks) =>
+            reorder(prevTasks, source.index, destination.index)
+        );
+  }
+
   return (
     <div
       className={`general ${
@@ -84,12 +106,15 @@ function App() {
           <TodoCreate
             createTodo={createTodo} 
             theme={theme} />
-          <TodoList
-            todos={filterTodos()}
-            removeTodos={removeTodos}
-            updateTodo={updateTodo}
-            theme={theme}
-          />
+
+          <DragDropContext onDragEnd={handleDragEnd}>
+            <TodoList
+              todos={filterTodos()}
+              removeTodos={removeTodos}
+              updateTodo={updateTodo}
+              theme={theme}
+            />
+          </DragDropContext>
           <TodoComputed
             computedItemsLeft={computedItemsLeft}
             clearComplete={clearComplete}

@@ -2,10 +2,10 @@ import React from "react";
 import CrossIcon from "./icons/CrossIcon";
 import IconCheked from "./icons/IconCheked";
 
-const TodoItem = ({ todo, removeTodos, updateTodo }) => {
+const TodoItem = React.forwardRef(({ todo, removeTodos, updateTodo, ...props }, ref) => {
   const { id, title, completed } = todo;
   return (
-    <article>
+    <article {...props} ref={ref}>
       <button
         onClick={() => updateTodo(id)}
         className={`circulo ${completed && "cheked"}`}
@@ -18,6 +18,6 @@ const TodoItem = ({ todo, removeTodos, updateTodo }) => {
       </button>
     </article>
   );
-};
+})
 
 export default TodoItem;
